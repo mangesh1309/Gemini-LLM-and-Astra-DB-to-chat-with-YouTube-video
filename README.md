@@ -7,10 +7,10 @@
 2. **Input Video Link: Video title and thumbnail image extracted using python**
 ![Screenshot 2024-07-25 221626](https://github.com/user-attachments/assets/35051cad-1d27-4d5e-b170-0665c8963402)
 
-3. A. **Output: The query knowledge present in the provided video**
+3. **Output: The query knowledge present in the provided video**
 ![Screenshot 2024-07-25 222116](https://github.com/user-attachments/assets/85d164ac-9b2b-47cf-8d52-6581959088ba)
 
-3. B. **Output: The query knowledge present in the provided video**
+4. **Output: The query knowledge present in the provided video**
 ![Screenshot 2024-07-25 221918](https://github.com/user-attachments/assets/8e550118-ab14-4e84-97fb-a1285da65808)
 
 ## Overview
