@@ -1,0 +1,11 @@
+youtube-transcript-api
+streamlit
+google-generativeai
+python-dotenv
+langchain
+chromadb
+faiss-cpu
+langchain_google_genai
+langchain_astradb
+google-cloud-translate
+yt_dlp
