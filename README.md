@@ -1,7 +1,5 @@
 # YouChat-AI
 
-# YouChat AI
-
 ## Overview
 
 YouChat AI is a Streamlit application designed to process YouTube video transcripts and answer user queries based on the video's content. It leverages various technologies, including the YouTube Transcript API, LangChain, Google Generative AI, and Astra DB, to create a conversational agent capable of responding to user questions about video content.
