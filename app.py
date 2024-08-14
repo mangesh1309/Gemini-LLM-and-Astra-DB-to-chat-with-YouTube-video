@@ -143,21 +143,25 @@ st.set_page_config(page_title="YouChat AI", layout="wide", page_icon="🧑‍�
 st.title("YouChat AI")
 st.sidebar.header("Video Details")
 
+# STEP 1: Get YoutTube Video URL
 video_link = st.sidebar.text_input("Enter YouTube Video URL", st.session_state.video_link)
 title, thumbnail = get_video_info(video_link)
 
 if st.sidebar.button("Process Video"):
     if video_link:
         with st.spinner('Processing video...'):
+            # STEP 2: Extract Video Transcript
             text = get_transcript(video_link)
 
             if text:
+                # STEP 3: Divide Long Transcript into Smaller Chunks
                 chunks = get_text_chunks(text)
                 documents = get_documents(chunks)
                 st.sidebar.success("Video processing done. You can now start querying.")
                 st.sidebar.image(thumbnail)
                 st.sidebar.subheader(title)
 
+                # STEP 4: Convert Chunks into Embeddings and Push onto Vector Database(Astra DB)
                 inserted_ids = insert_documents(documents)
                 st.session_state.idsx.extend(inserted_ids)
                 st.session_state.video_link = video_link  # Update session state with the video link
@@ -165,6 +169,7 @@ if st.sidebar.button("Process Video"):
             else:
                 st.sidebar.error("Sorry! Could not process the video")
 
+# STEP 5: User Query Input
 query = st.text_input("Enter your query", st.session_state.query)
 
 if st.button("Get Response"):
@@ -173,6 +178,7 @@ if st.button("Get Response"):
         st.sidebar.image(thumbnail)
         st.sidebar.subheader(title)
         with st.spinner('Getting response...'):
+            # STEP 6: Load Generative Model and Query for Response
             chain = get_conversational_chain()
             ans = get_response(chain, query)
             st.write("### Response")
